@@ -52,6 +52,11 @@ class M_admin extends CI_Model {
       $query = $this->db->get('proyectores');
 
       return $query->result_array();
-    }
+  }
 
+// Esta funcion elimina un proyector por medio del ID.
+  public function delProyector($idproyector){
+  	$this->db->where('idproyector', $idproyector);
+  	$this->db->delete('proyectores');
+  }
 }
