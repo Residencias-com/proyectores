@@ -33,9 +33,10 @@ class M_admin extends CI_Model {
   public function getProyectores($clave){
       $this->db->where('clave', $clave);
       $query = $this->db->get('proyectores');
+
       return $query->result_array();
   }
-  
+
 // Esta funcion evita a que se abra la vista "crea_proyector" cuando el ID que se coloque en la URI no exista
   public function getProyectorById($idproyector){
       $this->db->select('clave');
@@ -44,4 +45,13 @@ class M_admin extends CI_Model {
 
       return $query->result_array();
   }
+
+// Esta funcion te muestra el contenido de la tabla proyectores
+  public function obtenerProyectores(){
+      $this->db->order_by('clave', 'ASC');
+      $query = $this->db->get('proyectores');
+
+      return $query->result_array();
+    }
+
 }
