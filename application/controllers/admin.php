@@ -52,7 +52,7 @@ class Admin extends CI_Controller {
   					}
   					else{
   						$this->M_admin->insert();
-              redirect('admin/listar');
+              redirect('admin/crear');
   						echo "El proyector se ha sido agregado satisfactoriamente";
   				}
   			}
