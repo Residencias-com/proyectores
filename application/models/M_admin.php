@@ -35,4 +35,13 @@ class M_admin extends CI_Model {
       $query = $this->db->get('proyectores');
       return $query->result_array();
   }
+  
+// Esta funcion evita a que se abra la vista "crea_proyector" cuando el ID que se coloque en la URI no exista
+  public function getProyectorById($idproyector){
+      $this->db->select('clave');
+      $this->db->where('idproyector', $idproyector);
+      $query = $this->db->get('proyectores');
+
+      return $query->result_array();
+  }
 }
