@@ -29,4 +29,10 @@ class M_admin extends CI_Model {
     $this->db->update('proyectores', $data);
   }
 
+// Esta funcion sirve para comprobar si no existe otro proyector con la misma clave
+  public function getProyectores($clave){
+      $this->db->where('clave', $clave);
+      $query = $this->db->get('proyectores');
+      return $query->result_array();
+  }
 }
