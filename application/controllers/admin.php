@@ -5,6 +5,8 @@ class Admin extends CI_Controller {
 
   public function __construct(){
     parent::__construct();
+    $this->load->database();
+    $this->load->model('M_admin');
     $this->load->helper("form");
 	}
 
@@ -20,7 +22,7 @@ class Admin extends CI_Controller {
   public function crear($idproyector = NULL){
 
   	$this->load->library('form_validation'); //se carga la libreria para validar un formulario
-  
+
 
   		if($this->input->post()){
 
