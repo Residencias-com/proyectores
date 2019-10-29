@@ -90,4 +90,23 @@ class Admin extends CI_Controller {
       $this->load->view('templates/footer_admin');
     }
 
+
+// Esta funcion sirve para eliminar a un proyector, por medio de la ID.
+    public function borrar($idproyector = NULL){
+      if ($idproyector != NULL) {
+        $proyector = $this->M_admin->getProyectorById($idproyector);
+      	if (empty($proyector)) {
+      		echo "No se encontro el registro";
+      	}
+      	else {
+      		$this->M_admin->delProyector($idproyector);
+          redirect('admin/listar');
+          echo "El usuario se elimino satisfactoriamente";
+        }
+      }
+      else {
+      	echo "ID no especificado";
+      }
+    }
+
 }
