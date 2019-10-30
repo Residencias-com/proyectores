@@ -11,11 +11,11 @@ class Admin extends CI_Controller {
 	}
 
   public function index(){
-      $this->load->view('templates/header_admin');
-      $this->load->view('templates/admin_all');
-      $this->load->view('admin/inicio_admin');
-		  $this->load->view('templates/footer_admin');
-    }
+    $this->load->view('templates/header_admin');
+    $this->load->view('templates/admin_all');
+    $this->load->view('admin/inicio_admin');
+		$this->load->view('templates/footer_admin');
+  }
 
 // Funcion para insertar y editar proyector
 
@@ -83,11 +83,11 @@ class Admin extends CI_Controller {
 
 // Esta funcion sirve para listar los proyectores
   public function listar(){
-      $data['proyector'] = $this->M_admin->obtenerProyectores();
-      $this->load->view('templates/header_admin');
-      $this->load->view('templates/admin_all');
-      $this->load->view('admin/lista_proyectores', $data);
-      $this->load->view('templates/footer_admin');
+    $data['proyector'] = $this->M_admin->obtenerProyectores();
+    $this->load->view('templates/header_admin');
+    $this->load->view('templates/admin_all');
+    $this->load->view('admin/lista_proyectores', $data);
+    $this->load->view('templates/footer_admin');
   }
 
 
@@ -109,4 +109,11 @@ class Admin extends CI_Controller {
     }
   }
 
+// Esta funcion sirve para listar los usuarios
+  public function listar2(){
+    $this->load->view('templates/header_admin');
+    $this->load->view('templates/admin_all');
+    $this->load->view('admin/listar_user');
+    $this->load->view('templates/footer_admin');
+  }
 }
