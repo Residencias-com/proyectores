@@ -75,13 +75,13 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo base_url();?>admin/listar" class="nav-link">
+                <a href="<?php echo base_url();?>admin/listar_proyector" class="nav-link">
                   <i class="far fa-list-alt nav-icon"></i>
                   <p>Listar proyectores</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo base_url();?>admin/listar2" class="nav-link">
+                <a href="<?php echo base_url();?>admin/listar_proyector" class="nav-link">
                   <i class="far fa-user nav-icon"></i>
                   <p>Listar usuario</p>
                 </a>
