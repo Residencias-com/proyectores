@@ -42,7 +42,7 @@ class Admin extends CI_Controller {
   			else{
   				if ($this->input->post('edita_proyector')) {
   					$this->M_admin->editar($idproyector);
-            redirect('admin/listar');
+            redirect('admin/listar_proyector');
             echo "Se actualizo satisfactoriamente";
 
   				}
