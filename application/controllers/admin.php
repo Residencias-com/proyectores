@@ -82,7 +82,7 @@ class Admin extends CI_Controller {
   }
 
 // Esta funcion sirve para listar los proyectores
-  public function listar(){
+  public function listar_proyector(){
     $data['proyector'] = $this->M_admin->obtenerProyectores();
     $this->load->view('templates/header_admin');
     $this->load->view('templates/admin_all');
@@ -110,7 +110,7 @@ class Admin extends CI_Controller {
   }
 
 // Esta funcion sirve para listar los usuarios
-  public function listar2(){
+  public function listar_user(){
     $this->load->view('templates/header_admin');
     $this->load->view('templates/admin_all');
     $this->load->view('admin/listar_user');
