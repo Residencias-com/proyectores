@@ -81,7 +81,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo base_url();?>admin/listar_proyector" class="nav-link">
+                <a href="<?php echo base_url();?>admin/listar_user" class="nav-link">
                   <i class="far fa-user nav-icon"></i>
                   <p>Listar usuario</p>
                 </a>
