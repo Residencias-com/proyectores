@@ -21,7 +21,7 @@
 			<!-- <div class="container"> -->
 			<!-- <a href="#" class="navbar-brand"> -->
 			<img src="<?php echo base_url();?>/img/Logo-TNM.png" alt="TNM" class="logo2" style="opacity: .9">
-			<img src="<?php echo base_url();?>/assets/dist/img/ITTUX.png" alt="AdminLTE Logo" class="logo" style="opacity: .9">
+			<img src="<?php echo base_url();?>/assets/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="logo" style="opacity: .9">
 			<span class="titulo">
 				<h3>Instituto Tecnologico de Tuxtepec</h3>
 			</span>
