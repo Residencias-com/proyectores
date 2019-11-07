@@ -13,12 +13,12 @@
 	<script type="text/javascript" src="<?php echo base_url(); ?>/assets/js/all.min.js"></script>
 </head>
 
-<body>
+<body class="body">
 	<div class="card card-container">
 		<h3>Elija el departamento:</h3>
-		<a href="<?php echo base_url(); ?>/inicio/computo"><img class="profile-img-card" src="<?php echo base_url(); ?>/img/computo.png" alt=""></a>
+		<a href="<?php echo base_url(); ?>inicio/computo"><img class="profile-img-card" src="<?php echo base_url(); ?>/img/computo.png" alt=""></a>
 		<span>Computo</span>
-		<a href="<?php echo base_url(); ?>/inicio/academico"><img class="profile-img-card" src="<?php echo base_url(); ?>/img/academico.png" alt=""></a>
+		<a href="<?php echo base_url(); ?>inicio/academico"><img class="profile-img-card" src="<?php echo base_url(); ?>/img/academico.png" alt=""></a>
 		<span>Academico</span>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
