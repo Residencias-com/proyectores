@@ -1,17 +1,22 @@
-html body{
-  margin: 10px auto;
-  width: 30%;
-  background-color:rgb(99, 140, 33);
-}
-.contenedor{
-  padding: 10px 20px 10px 20px;
-}
 .logo {
 	width: 96px;
 	height: 96px;
-	margin: 0 auto 10px;
-	display: block;
+	margin: 0;
+  padding-left: 0px;
+	/* display: block; */
 	-moz-border-radius: 50%;
 	-webkit-border-radius: 50%;
 	border-radius: 50%;
+}
+.logo2 {
+	height: 96px;
+	margin: 0;
+	/* display: block; */
+  padding-right: 90px;
+}
+.titulo{
+  color: rgb(255,255,255);
+  padding-top: 0px;
+  padding-left: 90px;
+  font-weight: bold;
 }
