@@ -15,14 +15,14 @@ class Prestamo extends CI_Controller {
       $data['proyector'] = $this->M_admin->obtenerComputo();
       $this->load->view('templates/header_admin');
       $this->load->view('templates/navbar');
-      $this->load->view('general/prestamo',$data);
+      $this->load->view('prestamo/prestamo',$data);
       $this->load->view('templates/footer_admin');
     }
     else {
       $data['proyector'] = $this->M_admin->obtenerAcademico();
       $this->load->view('templates/header_admin');
       $this->load->view('templates/navbar');
-      $this->load->view('general/prestamo',$data);
+      $this->load->view('prestamo/prestamo',$data);
       $this->load->view('templates/footer_admin');
     }
   }
