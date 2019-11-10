@@ -59,18 +59,4 @@ class M_admin extends CI_Model {
   	$this->db->where('idproyector', $idproyector);
   	$this->db->delete('proyectores');
   }
-
-  public function obtenerComputo(){
-      $this->db->order_by('clave', 'ASC');
-      $this->db->where('depto', 'Computo');
-      $query = $this->db->get('proyectores');
-      return $query->result_array();
-    }
-
-    public function obtenerAcademico(){
-      $this->db->order_by('clave', 'ASC');
-      $this->db->where('depto', 'Academico');
-      $query = $this->db->get('proyectores');
-      return $query->result_array();
-    }
 }
