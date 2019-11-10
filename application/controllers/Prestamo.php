@@ -8,22 +8,18 @@ class Prestamo extends CI_Controller {
     $this->load->model('M_admin');
     $this->load->helper("form");
   }
-
-// Esta funcion hace un muestra los proyectores segun el depto que pertenecen
-  public function prestamo(){
-    if ($this->input->post('computo')) {
-      $data['proyector'] = $this->M_admin->obtenerComputo();
-      $this->load->view('templates/header_admin');
-      $this->load->view('templates/navbar');
-      $this->load->view('general/prestamo',$data);
-      $this->load->view('templates/footer_admin');
-    }
-    else {
-      $data['proyector'] = $this->M_admin->obtenerAcademico();
-      $this->load->view('templates/header_admin');
-      $this->load->view('templates/navbar');
-      $this->load->view('general/prestamo',$data);
-      $this->load->view('templates/footer_admin');
-    }
+  public function computo(){
+    $data['proyector'] = $this->M_admin->obtenerProyectores();
+    $this->load->view('templates/header_admin');
+    $this->load->view('templates/navbar');
+    $this->load->view('prestamo/prestamo_c',$data);
+    $this->load->view('templates/footer_admin');
+  }
+  public function academico(){
+    $data['proyector'] = $this->M_admin->obtenerProyectores();
+    $this->load->view('templates/header_admin');
+    $this->load->view('templates/navbar');
+    $this->load->view('prestamo/prestamo_a',$data);
+    $this->load->view('templates/footer_admin');
   }
 }
