@@ -12,15 +12,13 @@
 	<script type="text/javascript" src="<?php echo base_url(); ?>/assets/js/all.min.js"></script>
 </head>
 <body class="body">
-	<form class="" action="<?php echo base_url();?>prestamo/prestamo" method="post">
-		<div class="card card-container">
-			<h3>Elija el depto:</h3>
-				<button class="boton" value="computo" type="submit" name="computo"><img class="profile-img-card" src="<?php echo base_url(); ?>/img/computo.png" alt=""></button>
-				<span>Computo</span>
-				<button class="boton" value="academico" type="submit" name="academico"><img class="profile-img-card" src="<?php echo base_url(); ?>/img/academico.png" alt=""></button>
-				<span>Academico</span>
-	  </div>
-	</form>
+	<div class="card card-container">
+		<h3>Elija el departamento:</h3>
+		<a href="<?php echo base_url(); ?>prestamo/computo"><img class="profile-img-card" src="<?php echo base_url(); ?>/img/computo.png" alt=""></a>
+		<span>Computo</span>
+		<a href="<?php echo base_url(); ?>prestamo/academico"><img class="profile-img-card" src="<?php echo base_url(); ?>/img/academico.png" alt=""></a>
+		<span>Academico</span>
+	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="<?php echo base_url('assets/js/jQuery-3.4.1.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/js/jquery-3.4.1.min.map'); ?>"></script>
