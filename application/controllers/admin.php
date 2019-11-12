@@ -100,7 +100,7 @@ class Admin extends CI_Controller {
       }
       else {
       	$this->M_admin->delProyector($idproyector);
-        redirect('admin/listar_proyector');
+        redirect('admin/listar');
         echo "El usuario se elimino satisfactoriamente";
       }
     }
