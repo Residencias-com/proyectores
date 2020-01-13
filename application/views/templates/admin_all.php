@@ -13,7 +13,7 @@
 <li class="nav-item dropdown user-menu">
   <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
     <img src="<?php echo base_url();?>/img/admin.png" class="user-image img-circle" alt="User Image">
-    <span class="d-none d-md-inline">Administrador</span>
+    <span class="d-none d-md-inline"> <?php echo $this->session->userdata('name') ?> </span>
   </a>
   <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
     <!-- User image -->
@@ -28,8 +28,7 @@
     <!-- Menu Body -->
     <!-- Menu Footer-->
     <li class="user-footer">
-      <a href="#" class="btn btn-default btn-flat">Editar</a>
-      <a href="#" class="btn btn-default btn-flat float-right">Cerrar sesión</a>
+      <a href="<?php echo base_url();?>/login/logout" class="btn btn-default btn-flat float-right">Cerrar sesión</a>
     </li>
   </ul>
 </li>

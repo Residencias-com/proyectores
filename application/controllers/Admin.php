@@ -8,6 +8,9 @@ class Admin extends CI_Controller {
     $this->load->database();
     $this->load->model('M_admin');
     $this->load->helper("form");
+    if (!$this->session->userdata('log')) {
+      redirect('login');
+    }
 	}
 
   public function index(){

@@ -6,13 +6,18 @@ class Login extends CI_Controller {
   public function __construct(){
     parent::__construct();
     // $this->load->helper(array('getmenu','url'));
-    $this->load->library(array('form_validation', 'session'));
+    $this->load->library(array('form_validation'));
     $this->load->helper(array('auth/login_rules'));
     $this->load->model('Auth');
   }
 
   public function index(){
-		$this->load->view('sesion/login');
+    if ($this->session->userdata('log')) {
+      redirect('admin');
+    }
+		else {
+      $this->load->view('sesion/login');
+    }
 	}
 
   public function validate(){
@@ -34,13 +39,24 @@ class Login extends CI_Controller {
         $this->output->set_status_header(401);
         exit;
       }
-      $data = array(
+      $vars = array(
         'id'   => $res->id,
-        'name' => $res->nombre
+        'name' => $res->nombre,
+        'log'  => TRUE
       );
-      $this->session->set_userdata($data);
+      $this->session->set_userdata($vars);
       echo json_encode(array("url" => base_url('admin')));
     }
   }
 
+  public function logout(){
+    $vars = array(
+      'id',
+      'name',
+      'log'
+    );
+    $this->session->unset_userdata($vars);
+    $this->session->sess_destroy();
+    redirect('inicio');
+  }
 }
