@@ -98,8 +98,10 @@ $db['default'] = array(
 $db['db2'] = array(
 	'dsn'	=> 'dblib:host=10.10.0.17:5000;port=;dbname=bdtec',
 	'hostname' => '',
-	'username' => 'consulta',
-	'password' => 'Ittux19#',
+	//'username' => 'consulta',
+	//'password' => 'Ittux19#',
+	'username' => 'sa',
+	'password' => 'wks5410cc',
 	'database' => '',
 	'dbdriver' => 'pdo',
 	'dbprefix' => '',

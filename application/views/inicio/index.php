@@ -14,9 +14,9 @@
 <body class="body">
 	<div class="card card-container">
 		<h3>Sistema de registro de proyectores</h3>
-		<a href="<?php echo base_url(); ?>login"><img class="profile-img-card" src="<?php echo base_url(); ?>/img/computo.png" alt=""></a>
+		<a href="<?php echo base_url(); ?>login"><img class="profile-img-card" src="<?php echo base_url(); ?>/img/admin.png" alt=""></a>
 		<span>Administrador</span>
-		<a href="<?php echo base_url(); ?>inicio/depto"><img class="profile-img-card" src="<?php echo base_url(); ?>/img/academico.png" alt=""></a>
+		<a href="<?php echo base_url(); ?>inicio/depto"><img class="profile-img-card" src="<?php echo base_url(); ?>/img/prestamo.png" alt=""></a>
 		<span>Prestamo</span>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

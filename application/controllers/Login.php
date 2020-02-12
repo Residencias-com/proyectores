@@ -40,12 +40,14 @@ class Login extends CI_Controller {
         exit;
       }
       $vars = array(
-        'id'   => $res->id,
-        'name' => $res->nombre,
+        'id'   => $res->id_usuario,
+        'name' => $res->nombre_usuario,
+        'rfc'  => $res->rfc,
         'log'  => TRUE
       );
       $this->session->set_userdata($vars);
       echo json_encode(array("url" => base_url('admin')));
+      //redirect('admin');
     }
   }
 

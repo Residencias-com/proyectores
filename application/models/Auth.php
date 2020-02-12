@@ -6,7 +6,7 @@ class Auth extends CI_Model {
     $this->load->database();
   }
   public function login($usuario, $password){
-    $data = $this->db->get_where('usuarios', array('nombre' => $usuario, 'contraseña' => $password),1);
+    $data = $this->db->get_where('usuarios', array('nombre_usuario' => $usuario, 'contraseña' => $password));
     if (!$data->result()) {
       return false;
     }

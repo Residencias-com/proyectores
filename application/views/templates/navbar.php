@@ -29,8 +29,8 @@
 			<!-- </div> -->
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item dropdown user-menu">
-					<a href="<?php echo base_url();?>login" class="nav-link dropdown-toggle">
-						<span class="d-none d-md-inline" style="color: #fff; font-weight: bold;">Iniciar sesión</span>
+					<a href="<?php echo base_url();?>login1/logout" class="nav-link dropdown-toggle">
+						<span class="d-none d-md-inline" style="color: #fff; font-weight: bold;">Cerrar sesión</span>
 					</a>
 				</li>
 			</ul>

@@ -5,8 +5,8 @@ class Admin extends CI_Controller {
 
   public function __construct(){
     parent::__construct();
-    $this->load->database();
     $this->load->model('M_admin');
+    //$this->load->model('M_sybase');
     $this->load->helper("form");
     if (!$this->session->userdata('log')) {
       redirect('login');
@@ -103,7 +103,7 @@ class Admin extends CI_Controller {
       }
       else {
       	$this->M_admin->delProyector($idproyector);
-        redirect('admin/listar');
+        redirect('admin/listar_proyector');
         echo "El usuario se elimino satisfactoriamente";
       }
     }
@@ -114,9 +114,10 @@ class Admin extends CI_Controller {
 
 // Esta funcion sirve para listar los usuarios
   public function listar_user(){
+    $data['personal'] = $this->M_sybase->personal();
     $this->load->view('templates/header_admin');
     $this->load->view('templates/admin_all');
-    $this->load->view('admin/listar_user');
+    $this->load->view('admin/listar_user', $data);
     $this->load->view('templates/footer_admin');
   }
 }

@@ -7,6 +7,9 @@ class Prestamo extends CI_Controller {
     $this->load->database();
     $this->load->model('M_admin');
     $this->load->helper("form");
+    if (!$this->session->userdata('login')) {
+      redirect('login1');
+    }
   }
   public function computo(){
     $data['proyector'] = $this->M_admin->obtenerProyectores();
