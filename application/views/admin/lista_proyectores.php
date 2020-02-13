@@ -31,7 +31,7 @@
             <td><?php echo $proyectores['marca'] ?></td>
             <td>
               <div class="btn-group">
-                <a href="<?php echo base_url();?>admin/crear/<?php echo $proyectores['idproyector']; ?>" class="btn btn-warning"><span class="far fa-edit"></span></a>
+                <a href="<?php echo base_url();?>admin/guardar/<?php echo $proyectores['idproyector']; ?>" class="btn btn-warning"><span class="far fa-edit"></span></a>
                 <a href="<?php echo base_url();?>admin/borrar/<?php echo $proyectores['idproyector']; ?>" class="btn btn-danger"><span class="far fa-trash-alt"></span></a>
               </div>
             </td>
