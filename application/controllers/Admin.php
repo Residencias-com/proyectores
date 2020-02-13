@@ -8,6 +8,7 @@ class Admin extends CI_Controller {
     $this->load->model('M_admin');
     //$this->load->model('M_sybase');
     $this->load->helper("form");
+    $this->load->library('form_validation'); //se carga la libreria para validar un formulario
     if (!$this->session->userdata('log')) {
       redirect('login');
     }
@@ -23,9 +24,6 @@ class Admin extends CI_Controller {
 // Funcion para insertar y editar proyector
 
   public function crear($idproyector = NULL){
-
-  	$this->load->library('form_validation'); //se carga la libreria para validar un formulario
-
 
   		if($this->input->post()){
 
