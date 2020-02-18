@@ -23,7 +23,7 @@ class Admin extends CI_Controller {
 
 // Funcion para insertar y editar proyector alterna
 
-public function guardar($id_proyector = null) {
+public function guardar($id = null) {
 
   $this->form_validation->set_rules('clave','clave','required|max_length[50]');
   $this->form_validation->set_rules('marca','marca','required|max_length[50]');
@@ -32,9 +32,9 @@ public function guardar($id_proyector = null) {
   $this->form_validation->set_rules('depto','depto','required|max_length[45]');
 
   $vdata["clave"] = $vdata["marca"] = $vdata["modelo"] = $vdata["num_serie"] = $vdata["depto"] = "";
-  if (isset($id_proyector)) {
+  if (isset($id)) {
 
-      $proyector = $this->M_admin->getProyectorById($id_proyector);
+      $proyector = $this->M_admin->getProyectorById($id);
 
       if (isset($proyector)) {
           $vdata["clave"] = $proyector->clave;
@@ -59,21 +59,15 @@ public function guardar($id_proyector = null) {
       $vdata["num_serie"] = $this->input->post("num_serie");
       $vdata["depto"] = $this->input->post("depto");
 
-      if ($this->form_validation->run()) {
-          if (isset($id_proyector)) {
-              $this->M_admin->editar($id_proyector, $data);
-          } 
-          else{
-            if($this->M_admin->getProyectores($this->input->post('clave'))){
-              echo "<script> alert('Ya existe dicho proyector')</script>";
-            }else {
-              $id_proyector = $this->M_admin->insert($data);
-          
-              redirect("/admin/guardar");
-            }
-              
-          }
-      }
+      // if ($this->form_validation->run()) {
+          if (isset($id)) {
+              $this->M_admin->editar($id, $data);
+          } else {
+              $this->M_admin->insert($data);
+          redirect("/admin/listar_proyector");  
+      
+            } 
+      // }
   }
       
       $this->load->view('templates/header_admin');
@@ -145,7 +139,7 @@ public function guardar($id_proyector = null) {
 
 // Esta funcion sirve para listar los proyectores
   public function listar_proyector(){
-    $data['proyector'] = $this->M_admin->obtenerProyectores();
+    $data['proyector'] = $this->M_admin->proyectoresAll();
     $this->load->view('templates/header_admin');
     $this->load->view('templates/admin_all');
     $this->load->view('admin/lista_proyectores', $data);
@@ -154,22 +148,26 @@ public function guardar($id_proyector = null) {
 
 
 // Esta funcion sirve para eliminar a un proyector, por medio de la ID.
-  public function borrar($idproyector = NULL){
-    if ($idproyector != NULL) {
-      $proyector = $this->M_admin->getProyectorById($idproyector);
-      if (empty($proyector)) {
-      	echo "No se encontro el registro";
-      }
-      else {
-      	$this->M_admin->delProyector($idproyector);
-        redirect('admin/listar_proyector');
-        echo "El usuario se elimino satisfactoriamente";
-      }
-    }
-    else {
-      echo "ID no especificado";
-    }
-  }
+  // public function borrar($idproyector = NULL){
+  //   if ($idproyector != NULL) {
+  //     $proyector = $this->M_admin->getProyectorById($idproyector);
+  //     if (empty($proyector)) {
+  //     	echo "No se encontro el registro";
+  //     }
+  //     else {
+  //     	$this->M_admin->delProyector($idproyector);
+  //       redirect('admin/listar_proyector');
+  //       echo "El usuario se elimino satisfactoriamente";
+  //     }
+  //   }
+  //   else {
+  //     echo "ID no especificado";
+  //   }
+  // }
+
+  public function borrar($idproyector = null) {
+    $this->M_admin->delProyector($idproyector); 
+}
 
 // Esta funcion sirve para listar los usuarios
   public function listar_user(){

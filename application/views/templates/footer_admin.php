@@ -11,13 +11,15 @@
 
 
 <!-- jQuery -->
-<script src="<?php echo base_url();?>/assets/plugins/jquery/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<!-- <script src="<?php echo base_url();?>/assets/plugins/jquery/jquery.min.js"></script> -->
 <!-- jQuery UI 1.11.4 -->
-<script src="<?php echo base_url();?>/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- <script src="<?php echo base_url();?>/assets/plugins/jquery-ui/jquery-ui.min.js"></script> -->
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
+<!-- <script>
   $.widget.bridge('uibutton', $.ui.button)
-</script>
+</script> -->
 <!-- Bootstrap 4 -->
 <script src="<?php echo base_url();?>/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- ChartJS -->
@@ -69,9 +71,34 @@ $('#example1').DataTable({
           "previous": "Anterior"
       },
   }
-});
-$('.sidebar-menu').tree();
 })
+})
+var id;
+var link;
+$('#deleteProyector').on('show.bs.modal', function (event) {
+  link = $(event.relatedTarget) // Button that triggered the modal
+  id = link.data('id') // Extract info from data-* attributes
+  var name = link.data('name')
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this)
+  modal.find('.modal-title span').text(name)
+})
+
+$('#b-borrar').click(function(){
+  
+  $.ajax({
+    url: "<?php echo base_url();?>/admin/borrar/"+id,
+    context: document.body
+  }).done(function(res) {
+    // $( this ).addClass( "done" );
+    console.log(res);
+    $('#deleteProyector').modal('hide')
+    $(link).parent().parent().parent().remove()
+  });
+
+});
+
 </script>
 </body>
 </html>

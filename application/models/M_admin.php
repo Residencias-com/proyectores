@@ -24,6 +24,7 @@ class M_admin extends CI_Model {
 
     $this->db->where('idproyector', $idproyector);
     $this->db->update('proyectores', $data);
+    
   }
   // public function editar($idproyector){
 
@@ -70,6 +71,13 @@ class M_admin extends CI_Model {
       $query = $this->db->get('proyectores');
 
       return $query->result_array();
+  }
+  
+  public function proyectoresAll(){
+    $this->db->order_by('clave', 'ASC');
+    $query = $this->db->get('proyectores');
+
+    return $query->result();
   }
 
 // Esta funcion elimina un proyector por medio del ID.

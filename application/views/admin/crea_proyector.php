@@ -88,12 +88,12 @@
       <!-- /.card-body -->
         <div class="card-footer">
           <?php
-					if(empty($proyectores)){
+					// if(empty($proyectores)){
 					echo form_submit('inserta_proyector','Agregar',['class' => 'btn btn-success']);
-				}
-        else{
-					echo form_submit('edita_proyector','Actualizar',['class' => 'btn btn-success']);
-				}
+				// }
+        // else{
+				// 	echo form_submit('edita_proyector','Actualizar',['class' => 'btn btn-success']);
+				// }
 				?>
         </div>
         <?php echo form_close(); ?>
