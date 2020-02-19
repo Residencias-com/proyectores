@@ -2,7 +2,7 @@
     $input_clave = array(
       'name'        => 'clave',
       'id'          => 'clave',
-      'value'         => $clave, //con @ si encuentra información en el parametro lo pasa, pero si pasa información vacia en el parametro hace como que no existe dicho parametro
+      'value'         => $clave,
       'class'       => 'form-control',
       'placeholder' => 'Clave',
     );

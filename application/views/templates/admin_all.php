@@ -54,7 +54,7 @@
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview menu-open">
             <a href="" class="nav-link active">
-              <i class="nav-icon fas fa-tools"></i>
+            <i class="fas fa-bars nav-icon"></i>
               <p>
                 Menu
                 <i class="right fas fa-angle-left"></i>
@@ -63,32 +63,32 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="<?php echo base_url();?>admin" class="nav-link">
-                  <i class="far fa-comments nav-icon"></i>
+                <i class="fas fa-home nav-icon" ></i>
                   <p>Inicio</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="<?php echo base_url();?>admin/guardar" class="nav-link">
-                  <i class="far fa-plus-square nav-icon"></i>
+                  <i class="fas fa-plus-square nav-icon"></i>
                   <p>Insertar proyector</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="<?php echo base_url();?>admin/listar_proyector" class="nav-link">
-                  <i class="far fa-list-alt nav-icon"></i>
+                  <i class="fas fa-list-alt nav-icon"></i>
                   <p>Listar proyectores</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="<?php echo base_url();?>admin/listar_user" class="nav-link">
-                  <i class="far fa-user nav-icon"></i>
+                  <i class="fas fa-user nav-icon"></i>
                   <p>Listar usuario</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="#" class="nav-link">
-                  <i class="far fa-file nav-icon"></i>
-                  <p>Generar reportes</p>
+                <i class="fas fa-user-plus nav-icon"></i>
+                  <p>Registrar usuario</p>
                 </a>
               </li>
               <li class="nav-item">

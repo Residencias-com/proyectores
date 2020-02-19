@@ -59,7 +59,7 @@ public function guardar($id = null) {
       $vdata["num_serie"] = $this->input->post("num_serie");
       $vdata["depto"] = $this->input->post("depto");
 
-      // if ($this->form_validation->run()) {
+      if ($this->form_validation->run()) {
           if (isset($id)) {
               $this->M_admin->editar($id, $data);
           } else {
@@ -67,7 +67,7 @@ public function guardar($id = null) {
           redirect("/admin/listar_proyector");  
       
             } 
-      // }
+      }
   }
       
       $this->load->view('templates/header_admin');

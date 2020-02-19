@@ -49,12 +49,13 @@ class M_admin extends CI_Model {
 
 // Esta funcion evita a que se abra la vista "crea_proyector" cuando el ID que se coloque en la URI no exista
   function getProyectorById($idproyector){
-      $this->db->select('*');
+      $this->db->select();
       $this->db->from('proyectores');
       $this->db->where('idproyector', $idproyector);
+      
       $query = $this->db->get();
-
       return $query->row();
+     
   }
 
 //   function getProyectorById($idproyector){
