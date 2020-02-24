@@ -55,23 +55,23 @@
 <!-- page script -->
 <script>
 $(document).ready(function () {
-$('#example1').DataTable({
-  language: {
-      "lengthMenu": "Mostrar por pagina: _MENU_",
-      "zeroRecords": "No se encontraron resultados en su busqueda",
-      "searchPlaceholder": "Buscar registros:",
-      "info": "Mostrando registros de _START_ al _END_ de un total de  _TOTAL_ registros",
-      "infoEmpty": "No existen registros",
-      "infoFiltered": "(filtrado de un total de _MAX_ registros)",
-      "search": "Buscar:",
-      "paginate": {
-          "first": "Primero",
-          "last": "Último",
-          "next": "Siguiente",
-          "previous": "Anterior"
-      },
-  }
-})
+  $('#example1').DataTable({
+    language: {
+        "lengthMenu": "Mostrar por pagina: _MENU_",
+        "zeroRecords": "No se encontraron resultados en su busqueda",
+        "searchPlaceholder": "Buscar registros:",
+        "info": "Mostrando registros de _START_ al _END_ de un total de  _TOTAL_ registros",
+        "infoEmpty": "No existen registros",
+        "infoFiltered": "(filtrado de un total de _MAX_ registros)",
+        "search": "Buscar:",
+        "paginate": {
+            "first": "Primero",
+            "last": "Último",
+            "next": "Siguiente",
+            "previous": "Anterior"
+        },
+    }
+  })
 })
 var id;
 var link;
@@ -83,7 +83,7 @@ $('#deleteProyector').on('show.bs.modal', function (event) {
   // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
   var modal = $(this)
   modal.find('.modal-title span').text(name)
-})
+});
 
 $('#b-borrar').click(function(){
   
