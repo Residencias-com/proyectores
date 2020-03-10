@@ -72,15 +72,13 @@ $(document).ready(function () {
         },
     }
   })
-})
+});
 var id;
 var link;
 $('#deleteProyector').on('show.bs.modal', function (event) {
-  link = $(event.relatedTarget) // Button that triggered the modal
-  id = link.data('id') // Extract info from data-* attributes
+  link = $(event.relatedTarget)
+  id = link.data('id')
   var name = link.data('name')
-  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
   var modal = $(this)
   modal.find('.modal-title span').text(name)
 });
@@ -96,7 +94,7 @@ $('#b-borrar').click(function(){
     $('#deleteProyector').modal('hide')
     $(link).parent().parent().parent().remove()
   });
-
+  
 });
 
 </script>

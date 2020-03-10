@@ -10,6 +10,21 @@ class M_sybase extends CI_Model{
         $this->dbs = $this->load->database('db2', TRUE);
     }
 
+
+    public function login($rfc){
+        $this->dbs->select('*');
+        $this->dbs->where('rfc', $rfc);
+    
+        $result = $this->dbs->get('personal');
+        if($result->num_rows() > 0) {
+          return $result->row();
+        }
+        else {
+          return false;
+        }
+    }
+
+
     public function personal(){
         $this->dbm->order_by('','ASC');
         $query = $this->dbm->get('personal');

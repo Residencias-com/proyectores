@@ -3,15 +3,8 @@ $input_user = array(
   'name'        => 'usuario',
   'id'          => 'usuario',
   'class'       => 'form-control',
-  'placeholder' => 'Usuario',
+  'placeholder' => 'RFC',
 
-);
-
-$input_password = array(
-  'name'        => 'contraseña',
-  'id'          => 'contraseña',
-  'class'       => 'form-control',
-  'placeholder' => 'Contraseña'
 );
  ?>
 <!DOCTYPE html>
@@ -55,15 +48,6 @@ $input_password = array(
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
-            </div>
-          </div>
-        </div>
-        <div class="input-group mb-3">
-          <?php echo form_password($input_password); ?>
-          <!-- <input type="password" class="form-control" placeholder="Password"> -->
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
             </div>
           </div>
         </div>

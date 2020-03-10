@@ -17,12 +17,4 @@ class Prueba extends CI_Controller{
         $this->load->view('prestamo/horario', $data);
 		$this->load->view('templates/footer_admin');
     }
-
-    public function horario(){
-        $this->load->view('templates/header_admin');
-        $this->load->view('templates/admin_all');
-        $this->load->view('prestamo/ejemplo');
-		$this->load->view('templates/footer_admin');
-    }
-
 }

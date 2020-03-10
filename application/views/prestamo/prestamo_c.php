@@ -4,7 +4,8 @@
 		<div class="container-fluid">
 			<div class="row mb-2">
 				<div class="col-sm-6">
-					<h1 class="m-0 text-dark">Sistema de registro de proyectores Computo</h1>
+					<h1 class="m-0 text-dark">Sistema de registro de proyectores</h1><br>
+					<h5>Bienvenido <?php echo $this->session->userdata('nombre'),' ',$this->session->userdata('apellidos')?></h5>
 				</div><!-- /.col -->
 			</div><!-- /.row -->
 		</div><!-- /.container-fluid -->
@@ -18,14 +19,6 @@
 					<div class="card">
 						<div class="card-header">
 							<h3 class="card-title" style="font-weight: bold;">Proyectores disponibles</h3>
-
-							<!-- <div class="card-tools">
-              <span class="badge badge-danger">8 New Members</span>
-              <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-              </button>
-              <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
-              </button>
-            </div> -->
 						</div>
 						<!-- /.card-header -->
 						<div class="card-body p-0">
@@ -55,14 +48,6 @@
 					<div class="card">
 						<div class="card-header">
 							<h3 class="card-title" style="font-weight: bold;">Proyectores en uso</h3>
-
-							<!-- <div class="card-tools">
-              <span class="badge badge-danger">8 New Members</span>
-              <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-              </button>
-              <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
-              </button>
-            </div> -->
 						</div>
 						<!-- /.card-header -->
 						<div class="card-body p-0">

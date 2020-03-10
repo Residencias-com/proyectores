@@ -6,6 +6,7 @@ class login1 extends CI_Controller {
     parent::__construct();
     $this->load->database();
     $this->load->model('M_login');
+    $this->load->model('M_sybase');
     $this->load->helper("form");
     $this->load->helper('array');
   }
@@ -18,19 +19,22 @@ class login1 extends CI_Controller {
     $this->load->view('sesion/login_e1');
     var_dump($data);
   }
+
+  
   public function login(){
 
-      $user = $this->input->post('usuario');
-      $contraseña = $this->input->post('contraseña');
-      $res = $this->M_login->login($user, $contraseña);
+      $rfc = $this->input->post('usuario');
+      // $contraseña = $this->input->post('contraseña');
+      $res = $this->M_sybase->login($rfc);
 
       if (!$res) {
           redirect('login1');
       }
       else {
         $data = array(
-          'id' => $res->id,
-          'nombre' => $res->nombre,
+          'rfc' => $res->rfc,
+          'nombre' => $res->nombre_empleado,
+          'apellidos' => $res->apellidos_empleado,
           'login' => TRUE
         );
       $this->session->set_userdata($data);
@@ -47,4 +51,5 @@ class login1 extends CI_Controller {
     $this->session->sess_destroy();
     redirect('inicio');
   }
+
 }
