@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class login1 extends CI_Controller {
+class loginA extends CI_Controller {
   public function __construct(){
     parent::__construct();
     $this->load->database();
@@ -12,15 +12,14 @@ class login1 extends CI_Controller {
   }
   
   public function index(){
-    $data['abc'] = array(
-      'depto' => $this->input->post(),
-    );
-    
-    $this->load->view('sesion/login_e1');
-    var_dump($data);
-  }
+    if ($this->session->userdata('loginA')) {
+      redirect('prestamo/academico');
+    }
+		else {
+      $this->load->view('sesion/login_a');
+    }
+	}
 
-  
   public function login(){
 
       $rfc = $this->input->post('usuario');
@@ -28,28 +27,24 @@ class login1 extends CI_Controller {
       $res = $this->M_sybase->login($rfc);
 
       if (!$res) {
-          redirect('login1');
+          redirect('loginA');
       }
       else {
         $data = array(
           'rfc' => $res->rfc,
           'nombre' => $res->nombre_empleado,
           'apellidos' => $res->apellidos_empleado,
-          'login' => TRUE
+          'loginA' => TRUE
         );
       $this->session->set_userdata($data);
-      if ($this->input->post('loginC')) {
-        redirect('prestamo/computo');
-      }
-      elseif ($this->input->post('loginA')) {
-        redirect('prestamo/academico');
-      }
+      
+      redirect('prestamo/academico');
     }
   }
   
   public function logout(){
     $this->session->sess_destroy();
-    redirect('inicio');
+    redirect('inicio/depto');
   }
 
 }

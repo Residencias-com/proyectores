@@ -41,7 +41,7 @@ $input_user = array(
       </div>
       <!-- /.login-logo -->
       <p class="login-box-msg">Inicia sesión</p>
-  <?php echo form_open("login1/login"); ?>
+  <?php echo form_open("loginC/login"); ?>
         <div class="input-group mb-3">
           <?php echo form_input($input_user); ?>
           <!-- <input type="email" class="form-control" placeholder="Email"> -->
@@ -57,8 +57,7 @@ $input_user = array(
           <!-- /.col -->
           <div class="col-4">
                       
-            <?php echo form_submit('loginC','LoginC',['class' => 'btn btn-primary btn-block btn-flat']); ?>
-            <?php echo form_submit('loginA','LoginA',['class' => 'btn btn-primary btn-block btn-flat']); ?>
+            <?php echo form_submit('loginC','Iniciar Sesión',['class' => 'btn btn-primary btn-sm btn-block btn-flat']); ?>
           
           </div>
           <!-- /.col -->

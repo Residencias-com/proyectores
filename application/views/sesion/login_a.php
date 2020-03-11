@@ -3,15 +3,8 @@ $input_user = array(
   'name'        => 'usuario',
   'id'          => 'usuario',
   'class'       => 'form-control',
-  'placeholder' => 'Usuario',
+  'placeholder' => 'RFC',
 
-);
-
-$input_password = array(
-  'name'        => 'contraseña',
-  'id'          => 'contraseña',
-  'class'       => 'form-control',
-  'placeholder' => 'Contraseña'
 );
  ?>
 <!DOCTYPE html>
@@ -48,7 +41,7 @@ $input_password = array(
       </div>
       <!-- /.login-logo -->
       <p class="login-box-msg">Inicia sesión</p>
-  <?php echo form_open("login2/login"); ?>
+  <?php echo form_open("loginA/login"); ?>
       <!-- <form action="../../index3.html" method="post"> -->
         <div class="input-group mb-3">
           <?php echo form_input($input_user); ?>
@@ -59,22 +52,12 @@ $input_password = array(
             </div>
           </div>
         </div>
-        <div class="input-group mb-3">
-          <?php echo form_password($input_password); ?>
-          <!-- <input type="password" class="form-control" placeholder="Password"> -->
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
-          </div>
-        </div>
         <div class="row">
           <div class="col-8">
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <!-- <button type="submit" class="btn btn-primary btn-block btn-flat">Login</button> -->
-            <?php echo form_submit('','LoginA',['class' => 'btn btn-primary btn-block btn-flat']); ?>
+            <?php echo form_submit('loginA','LoginA',['class' => 'btn btn-primary btn-sm btn-block btn-flat']); ?>
           </div>
           <!-- /.col -->
         </div>

@@ -22,7 +22,6 @@
 
       <p>
         Administrador
-        <small>Ing. Felipe de Jesus Niño de la Cruz</small>
       </p>
     </li>
     <!-- Menu Body -->

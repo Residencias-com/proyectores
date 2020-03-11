@@ -26,8 +26,8 @@ class M_sybase extends CI_Model{
 
 
     public function personal(){
-        $this->dbm->order_by('','ASC');
-        $query = $this->dbm->get('personal');
+        $this->dbs->order_by('','ASC');
+        $query = $this->dbs->get('personal');
 
         return $query->result_array();
     }

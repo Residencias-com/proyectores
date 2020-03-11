@@ -10,15 +10,15 @@
 	<script type="text/javascript" src="<?php echo base_url(); ?>/assets/js/bootstrap.min.js"></script>
 </head>
 <body class="body">
-	<!-- <div class="card card-container">
+	<div class="card card-container">
 		<h3>Elija el departamento:</h3>
-		<a href="<?php echo base_url(); ?>login1"><img class="profile-img-card" src="<?php echo base_url(); ?>/img/computo.png" alt=""></a>
+		<a href="<?php echo base_url();?>loginC"><img class="profile-img-card" src="<?php echo base_url(); ?>/img/computo.png" alt=""></a>
 		<span>Computo</span>
-		<a href="<?php echo base_url(); ?>login2"><img class="profile-img-card" src="<?php echo base_url(); ?>/img/academico.png" alt=""></a>
+		<a href="<?php echo base_url();?>loginA"><img class="profile-img-card" src="<?php echo base_url(); ?>/img/academico.png" alt=""></a>
 		<span>Academico</span>
-	</div> -->
+	</div>
 
-	<form action="<?php echo base_url();?>login1" method="post">
+	<!-- <form action="<?php echo base_url();?>login1" method="post">
 		<div class="card card-container">
 		<h3>Elija el departamento:</h3>
 			<button class="boton" type="submit" name="computo" id="computo">
@@ -30,7 +30,7 @@
 			</button>
 			<span>Academico</span>
 		</div>
-	</form>
+	</form> -->
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="<?php echo base_url('assets/js/auth/login.js'); ?>"></script>

@@ -6,7 +6,7 @@ class Admin extends CI_Controller {
   public function __construct(){
     parent::__construct();
     $this->load->model('M_admin');
-    //$this->load->model('M_sybase');
+    $this->load->model('M_sybase');
     $this->load->helper("form");
     $this->load->library('form_validation'); //se carga la libreria para validar un formulario
     if (!$this->session->userdata('log')) {
