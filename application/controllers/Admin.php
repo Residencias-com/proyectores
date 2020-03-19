@@ -8,11 +8,12 @@ class Admin extends CI_Controller {
     $this->load->model('M_admin');
     $this->load->model('M_sybase');
     $this->load->helper("form");
-    $this->load->library('form_validation'); //se carga la libreria para validar un formulario
+    $this->load->library('form_validation');
     if (!$this->session->userdata('log')) {
       redirect('login');
     }
 	}
+
 
   public function index(){
     $this->load->view('templates/header_admin');
@@ -21,8 +22,8 @@ class Admin extends CI_Controller {
 		$this->load->view('templates/footer_admin');
   }
 
-// Funcion para insertar y editar proyector alterna
 
+// Funcion para insertar y editar proyector alterna
 public function guardar($id = null) {
 
   $this->form_validation->set_rules('clave','clave','required|max_length[50]');
@@ -32,11 +33,13 @@ public function guardar($id = null) {
   $this->form_validation->set_rules('depto','depto','required|max_length[45]');
 
   $vdata["clave"] = $vdata["marca"] = $vdata["modelo"] = $vdata["num_serie"] = $vdata["depto"] = "";
+  
   if (isset($id)) {
 
       $proyector = $this->M_admin->getProyectorById($id);
 
       if (isset($proyector)) {
+          // $vdata["idproyector"] = $proyector->idproyector;
           $vdata["clave"] = $proyector->clave;
           $vdata["marca"] = $proyector->marca;
           $vdata["modelo"] = $proyector->modelo;
@@ -61,12 +64,11 @@ public function guardar($id = null) {
 
       if ($this->form_validation->run()) {
           if (isset($id)) {
-              $this->M_admin->editar($id, $data);
-          } else {
-              $this->M_admin->insert($data);
-          redirect("/admin/listar_proyector");  
-      
-            } 
+            $this->M_admin->editar($id, $data);
+          } else{
+            $id = $this->M_admin->insert($data);
+             redirect("/admin/listar_proyector");
+          }
       }
   }
       
@@ -77,65 +79,6 @@ public function guardar($id = null) {
 
 }
 
-// Funcion para insertar y editar proyector version 1
-  // public function crear($idproyector = NULL){
-
-  // 		if($this->input->post()){
-
-  //       $this->form_validation->set_rules('clave','clave','required|max_length[50]');
-  // 		  $this->form_validation->set_rules('marca','marca','required|max_length[50]');
-  // 		  $this->form_validation->set_rules('modelo','modelo','required|max_length[45]');
-  // 		  $this->form_validation->set_rules('num_serie','num_serie','required|max_length[45]');
-  // 		  $this->form_validation->set_rules('depto','depto','required|max_length[45]');
-
-  //       if($this->form_validation->run()== FALSE){
-
-  //         $this->load->view('templates/header_admin');
-  //         $this->load->view('templates/admin_all');
-  //         $this->load->view('admin/crea_proyector');
-  //         $this->load->view('templates/footer_admin');
-  // 			}
-  // 			else{
-  // 				if ($this->input->post('edita_proyector')) {
-  // 					$this->M_admin->editar($idproyector);
-  //           redirect('admin/listar_proyector');
-  //           echo "Se actualizo satisfactoriamente";
-
-  // 				}
-  // 				else {
-  // 					if($this->M_admin->getProyectores($this->input->post('clave'))){
-  // 						echo "Ya existe dicho proyector";
-  // 					}
-  // 					else{
-  // 						$this->M_admin->insert();
-  //             redirect('admin/crear');
-  // 						echo "El proyector se ha sido agregado satisfactoriamente";
-  // 				}
-  // 			}
-  // 		}
-  // 	}
-  // 		else{
-  // 			if ($idproyector == NULL) {
-  //         $this->load->view('templates/header_admin');
-  //         $this->load->view('templates/admin_all');
-  //         $this->load->view('admin/crea_proyector');
-  //         $this->load->view('templates/footer_admin');
-  // 		} else
-  //       {
-  // 			$data['proyectores'] = $this->M_admin->getProyectorById($idproyector);
-  // 			if (empty($data['proyectores'])) {
-  // 					echo "No se encontro el ID del usuario";
-  // 			}
-  // 			else {
-
-  //           $this->load->view('templates/header_admin');
-  //           $this->load->view('templates/admin_all');
-  //           $this->load->view('admin/crea_proyector', $data);
-  //           $this->load->view('templates/footer_admin');
-  // 			}
-  // 		}
-  // 	}
-  // }
 
 // Esta funcion sirve para listar los proyectores
   public function listar_proyector(){
@@ -146,35 +89,27 @@ public function guardar($id = null) {
     $this->load->view('templates/footer_admin');
   }
 
-
-// Esta funcion sirve para eliminar a un proyector, por medio de la ID.
-  // public function borrar($idproyector = NULL){
-  //   if ($idproyector != NULL) {
-  //     $proyector = $this->M_admin->getProyectorById($idproyector);
-  //     if (empty($proyector)) {
-  //     	echo "No se encontro el registro";
-  //     }
-  //     else {
-  //     	$this->M_admin->delProyector($idproyector);
-  //       redirect('admin/listar_proyector');
-  //       echo "El usuario se elimino satisfactoriamente";
-  //     }
-  //   }
-  //   else {
-  //     echo "ID no especificado";
-  //   }
-  // }
-
+// Esta funcion elimina un proyector por medio del ID
   public function borrar($idproyector = null) {
     $this->M_admin->delProyector($idproyector); 
 }
 
-// Esta funcion sirve para listar los usuarios
-  public function listar_user(){
-    $data['personal'] = $this->M_sybase->personal();
+
+  public function add_user(){
     $this->load->view('templates/header_admin');
     $this->load->view('templates/admin_all');
-    $this->load->view('admin/listar_user', $data);
+    $this->load->view('admin/add_user');
     $this->load->view('templates/footer_admin');
   }
+
+
+  public function insert_user(){
+    $data = array(
+      'nombre_usuario' => $this->input->post("user"), 
+      'correo_electronico' => $this->input->post("email"),
+      'contraseña' => $this->input->post("password"),
+    );
+    $query = $this->M_admin->insert_user($data);
+  }
+
 }

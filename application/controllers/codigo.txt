@@ -1,0 +1,113 @@
+1
+// Esta funcion sirve para eliminar a un proyector, por medio de la ID.
+  // public function borrar($idproyector = NULL){
+  //   if ($idproyector != NULL) {
+  //     $proyector = $this->M_admin->getProyectorById($idproyector);
+  //     if (empty($proyector)) {
+  //     	echo "No se encontro el registro";
+  //     }
+  //     else {
+  //     	$this->M_admin->delProyector($idproyector);
+  //       redirect('admin/listar_proyector');
+  //       echo "El usuario se elimino satisfactoriamente";
+  //     }
+  //   }
+  //   else {
+  //     echo "ID no especificado";
+  //   }
+  // }
+  
+2
+  // Funcion para insertar y editar proyector version 1
+  // public function crear($idproyector = NULL){
+
+  // 		if($this->input->post()){
+
+  //       $this->form_validation->set_rules('clave','clave','required|max_length[50]');
+  // 		  $this->form_validation->set_rules('marca','marca','required|max_length[50]');
+  // 		  $this->form_validation->set_rules('modelo','modelo','required|max_length[45]');
+  // 		  $this->form_validation->set_rules('num_serie','num_serie','required|max_length[45]');
+  // 		  $this->form_validation->set_rules('depto','depto','required|max_length[45]');
+
+  //       if($this->form_validation->run()== FALSE){
+
+  //         $this->load->view('templates/header_admin');
+  //         $this->load->view('templates/admin_all');
+  //         $this->load->view('admin/crea_proyector');
+  //         $this->load->view('templates/footer_admin');
+  // 			}
+  // 			else{
+  // 				if ($this->input->post('edita_proyector')) {
+  // 					$this->M_admin->editar($idproyector);
+  //           redirect('admin/listar_proyector');
+  //           echo "Se actualizo satisfactoriamente";
+
+  // 				}
+  // 				else {
+  // 					if($this->M_admin->getProyectores($this->input->post('clave'))){
+  // 						echo "Ya existe dicho proyector";
+  // 					}
+  // 					else{
+  // 						$this->M_admin->insert();
+  //             redirect('admin/crear');
+  // 						echo "El proyector se ha sido agregado satisfactoriamente";
+  // 				}
+  // 			}
+  // 		}
+  // 	}
+  // 		else{
+  // 			if ($idproyector == NULL) {
+  //         $this->load->view('templates/header_admin');
+  //         $this->load->view('templates/admin_all');
+  //         $this->load->view('admin/crea_proyector');
+  //         $this->load->view('templates/footer_admin');
+  // 		} else
+  //       {
+  // 			$data['proyectores'] = $this->M_admin->getProyectorById($idproyector);
+  // 			if (empty($data['proyectores'])) {
+  // 					echo "No se encontro el ID del usuario";
+  // 			}
+  // 			else {
+
+  //           $this->load->view('templates/header_admin');
+  //           $this->load->view('templates/admin_all');
+  //           $this->load->view('admin/crea_proyector', $data);
+  //           $this->load->view('templates/footer_admin');
+  // 			}
+  // 		}
+  // 	}
+  // }
+
+3
+  // Esta funcion inserta los datos del POST a la tabla proyectores
+  // public function insert(){
+  //   $datos = $this->input->post();
+  //   unset($datos['inserta_proyector']);
+
+  //   $this->db->insert('proyectores',$datos);
+  // } 
+
+4
+  // Esta funcion edita un  proyector, por medio de ID
+  // public function editar($idproyector){
+
+  //   $data = array(
+  //     'clave' => $this->input->post('clave'),
+	// 		'marca' => $this->input->post('marca'),
+	// 		'modelo' => $this->input->post('modelo'),
+	// 		'num_serie' => $this->input->post('num_serie'),
+	// 		'depto' => $this->input->post('depto'),
+  //   );
+  //   $this->db->where('idproyector', $idproyector);
+  //   $this->db->update('proyectores', $data);
+  // }
+
+5
+// Esta funcion evita a que se abra la vista "crea_proyector" cuando el ID que se coloque en la URI no exista
+//   function getProyectorById($idproyector){
+//     $this->db->select('clave');
+//     $this->db->where('idproyector', $idproyector);
+//     $query = $this->db->get('proyectores');
+
+//     return $query->result_array();
+//   }

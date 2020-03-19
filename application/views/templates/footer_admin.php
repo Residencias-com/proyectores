@@ -9,7 +9,7 @@
 <!-- cierre wrapper -->
 </div>
 
-
+<!-- <script src="<?php echo base_url();?>/assets/js/app.js"></script> -->
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
@@ -96,6 +96,19 @@ $('#b-borrar').click(function(){
   });
   
 });
+
+$('#login').submit(function(e){
+  e.preventDefault();
+  $.ajax({
+    url:$(this).attr('action'),
+    type:$(this).attr('method'),
+    data:$(this).serialize(),
+    success:function(response){
+      alert(response);
+    }
+  });
+});
+
 
 </script>
 </body>

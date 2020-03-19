@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
   $('#example1').DataTable({
     language: {
@@ -41,3 +40,16 @@ $('#b-borrar').click(function(){
   });
   
 });
+
+  $('#login').submit(function(e){
+    e.preventDefault();
+    $.ajax({
+      url:$(this).attr('action'),
+      type:$(this).attr('method'),
+      data:$(this).serialize(),
+      success:function(response){
+        alert(response);
+      }
+    });
+  });
+

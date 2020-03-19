@@ -17,6 +17,19 @@
 
 <script src="<?php echo base_url();?>/assets/js/app.js"></script>
 
+<script>
+
+var id_p;
+var link;
+  $('#proyectorModal').on('show.bs.modal', function (event) {
+    link = $(event.relatedTarget)
+    id_p = link.data('id')
+    var name = link.data('name')
+    var modal = $(this)
+    modal.find('.modal-title span').text(name)
+  });
+
+</script>
 
 </body>
 </html>

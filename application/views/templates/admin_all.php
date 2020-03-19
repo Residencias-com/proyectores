@@ -79,13 +79,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo base_url();?>admin/listar_user" class="nav-link">
-                  <i class="fas fa-user nav-icon"></i>
-                  <p>Listar usuario</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="<?php echo base_url();?>admin/add_user" class="nav-link">
                 <i class="fas fa-user-plus nav-icon"></i>
                   <p>Registrar usuario</p>
                 </a>

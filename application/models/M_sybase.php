@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class M_sybase extends CI_Model{
-    private $dbp, $dbm;
+    private $dbm, $dbs;
  
     public function __construct(){
         parent:: __construct();
@@ -35,6 +35,7 @@ class M_sybase extends CI_Model{
     public function horario(){
         $this->dbs->order_by('','ASC');
         $this->dbs->where('rfc', 'AUCJ790311C95');
+        $this->dbs->where('periodo', '20201');
         $query = $this->dbs->get('horarios');
   
         return $query->result_array();
