@@ -96,7 +96,8 @@ $db['default'] = array(
 );
 
 $db['db2'] = array(
-	'dsn'	=> 'dblib:host=10.10.0.17:5000;port=;dbname=bdtec',
+	//'dsn'	=> 'dblib:host=10.10.76.49:5000;port=;dbname=bdtec',
+	'dsn'	=> 'dblib:host=192.168.1.76:5000;dbname=bdtec',
 	'hostname' => '',
 	//'username' => 'consulta',
 	//'password' => 'Ittux19#',
